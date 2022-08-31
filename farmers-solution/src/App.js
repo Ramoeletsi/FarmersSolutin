@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
 
@@ -58,7 +57,7 @@ function App() {
           </div>
         </div>
         
-        {data.name != undefined &&
+        {data.name !== undefined &&
           <div className="bottom">
             <div className="feels">
               <p>Feels like</p>
