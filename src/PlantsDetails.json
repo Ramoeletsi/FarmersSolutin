@@ -1,5 +1,4 @@
 [
-
     { 
         "plant" : 1,
        "name" : "vegetables",
@@ -21,5 +20,4 @@
        "temperature" : 10,
        "light" : 2
     }
-    
-    ]
+]
