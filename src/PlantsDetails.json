@@ -1,0 +1,25 @@
+[
+
+    { 
+        "plant" : 1,
+       "name" : "vegetables",
+       "humidity" : 70,
+       "temperature" : 10,
+       "light" : 2
+    },
+    { 
+        "plant" : 2,
+       "name" : "flowering",
+       "humidity" : 60,
+       "temperature" : 10,
+       "light" : 2
+    },
+    { 
+        "plant" : 3,
+       "name" : "beans",
+       "humidity" : 10,
+       "temperature" : 10,
+       "light" : 2
+    }
+    
+    ]
