@@ -1,0 +1,47 @@
+[
+    { 
+        "id" : 1,
+       "name" : "Tomato",
+       "averagehumidity" : 40,
+       "averagetemperature" : 15,
+       "light" : 2
+    },
+
+    { 
+        "id" : 2,
+       "name" : "Maize",
+       "averagehumidity" : 60,
+       "averagetemperature" : 10,
+       "averagelight" : 2,
+       "averagerainfall" : 40,
+
+        "sowingmonths" : [
+            {
+                "early": "October",
+                "late" : "November"
+            }
+           ],
+
+        "weedcontrolmonths" : [
+            {
+                "early": "December",
+                "late" : "January"
+            }
+           ],
+           
+        "harvestingmonths" : [
+            {
+                "early": "May",
+                "late" : "July"
+            }
+           ]
+    },
+
+    { 
+        "id" : 3,
+       "name" : "Cabbage",
+       "humidity" : 10,
+       "temperature" : 10,
+       "light" : 2
+    }
+]
