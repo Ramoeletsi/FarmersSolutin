@@ -8,7 +8,7 @@ function App() {
   const [data, setData] = useState({})
   const [getlocation, setGetLocation] = useState('')
   const [showMoreDetails, setShowMoreDetails] = useState(false);
-  
+    
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${getlocation}&units=metric&appid=eacf37967a7e8aadc0c904494f4f488c`
 
   const dateBuilder = (d) => {
@@ -25,6 +25,39 @@ function App() {
 
     return `${day} ${date} ${month} ${year}`
   }
+
+  const germinationDay = () => {
+    const current = new Date();
+  
+    current.setDate(current.getDate() + 10);
+    return(current.toDateString());
+    
+  }
+
+  const growthRateCalculation = () => {
+
+    const idealtemperature = 20;
+    const idealhumidity = 55;
+
+    const idealgrowth =  idealtemperature + idealhumidity;
+    const obtainedgrowth = data.main.temp + data.main.humidity;
+
+    const actualgrowth = idealgrowth - obtainedgrowth;
+
+    if (actualgrowth === idealgrowth){
+      return(germinationDay());
+    }
+    
+    if (actualgrowth < idealgrowth){
+      return( germinationDay());
+    }
+
+    else {
+      return(actualgrowth);
+    }
+    
+  }   
+  
   
   const searchLocation = (event) =>{
     if (event.key === 'Enter') {
@@ -42,7 +75,15 @@ function App() {
         value={getlocation}
         onChange = {event => setGetLocation(event.target.value)}
         onKeyPress={searchLocation}
-        placeholder="Search...."
+        placeholder="Search By Location"
+      />
+    </div>
+    <div className='search-box'>
+      <input type="text" 
+        value={getlocation}
+        onChange = {event => setGetLocation(event.target.value)}
+        onKeyPress={searchLocation}
+        placeholder="Search By Plant"
       />
     </div>
       <div className="weather-container">
@@ -81,64 +122,27 @@ function App() {
             {showMoreDetails  && 
             <div>
 
-          {data.main.humidity < 20 &&
-            <h2>
-              You have to water your plants.
+            <h5>
+              Suggested Plants You Can Grow In Your Area!!!
               { //check if the data exists then execute if its there
               Plants && Plants.map( plants => {
               return(
-                <div key={plants.plant}>
-                  {plants.humidity < 20 &&
-                 <p> {plants.name} </p>
-                  }
-                </div>
-              )})
-              }
-            </h2>
-          }
-             
-          {data.main.humidity > 20 && 
-            <p>Humidity: Good
-            <br></br>
-            Teperature: Good
-            <br></br>
-            
-            { //check if the data exists then execute if its there
-              Plants && Plants.map( plants => {
-              return(
-                <div key={plants.id}>
-                  {plants.humidity > 20 && 
-                 <p> Plants you can grow: {plants.name} 
-                 {plants.sowingmonths.map( months => {
-                    return (
-                      <div key={plants.id}>
-                      <p> Early Planting month: {months.early}</p>
-                      <p> Late Planting month: {months.late}</p>
-                      </div>
-                    )
-                 } 
-                 )
-                 }
-
-                  {plants.weedcontrolmonths.map( months => {
-                    return (
-                      <div key={plants.id}>
-                      <p> Early Weed Control Month: {months.early}</p>
-                      <p> Late Weed Control Month: {months.late}</p>
-                      </div>
-                    )
-                 } 
-                 )}
-
-
+                <div key={plants.id}> 
+                { data.main.humidity > 30 && plants.averagehumidity > data.main.humidity && data.main.temp > 10 && data.main.temp < plants.averagetemperature &&        
+                 <p> Plant Name: {plants.name} 
+                 <br></br>
+                 Planting Day: {dateBuilder(new Date())}
+                 <br></br>
+                 Germination Day: {growthRateCalculation()}
+                 <br></br>
+                 Agriculture Practice: {plants.practices}
                  </p>
-                  }
-
+                }
                 </div>
               )})
               }
-            </p>  
-            }
+            </h5>
+          
 
           </div>
           }
