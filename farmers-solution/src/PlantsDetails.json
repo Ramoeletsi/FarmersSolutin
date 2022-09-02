@@ -66,5 +66,73 @@
        "soilpH" : "",
        "soiltype " : "",
        "germinationtoharvestperiod" : ""
+    },
+
+    { 
+        "id" : 5,
+       "name" : "Beetroot",
+       "averagehumidity" : 30,
+       "averagetemperature" : 17,
+       "practices" : "Manuring",
+       "country" : "BW",
+       "sowperiod" : "March-May",
+       "weedingperiod": "April-June",
+       "bloomperiod" : "April-May",
+       "harvestperiod" : "June-September",
+       "seedgerminationdays" : "10-14 days",
+       "soilpH" : "6.0pH",
+       "soiltype " : "Loam-Soil",
+       "germinationtoharvestperiod" : "130 days"
+    },
+
+    { 
+        "id" : 6,
+       "name" : "Bell Pepper",
+       "averagehumidity" : 18,
+       "averagetemperature" : 21.5,
+       "practices" : "Manuring",
+       "country" : "BW",
+       "sowperiod" : "March-May",
+       "weedingperiod": "May-July",
+       "bloomperiod" : "May-June",
+       "harvestperiod" : "June-October",
+       "seedgerminationdays" : "14-20 days",
+       "soilpH" : "7.0pH",
+       "soiltype " : "Loam-Soil",
+       "germinationtoharvestperiod" : "90 days"
+    },
+
+    { 
+        "id" : 7,
+       "name" : "Butternut Squash",
+       "averagehumidity" : 25,
+       "averagetemperature" : 25,
+       "practices" : "Manuring",
+       "country" : "BW",
+       "sowperiod" : "March-May",
+       "weedingperiod": "April-June",
+       "bloomperiod" : "June-july",
+       "harvestperiod" : "August-October",
+       "seedgerminationdays" : "10-14 days",
+       "soilpH" : "7.0pH",
+       "soiltype " : "Any type of soil",
+       "germinationtoharvestperiod" : "120 days"
+    },
+
+    { 
+        "id" : 8,
+       "name" : "Lettuce",
+       "averagehumidity" : 18,
+       "averagetemperature" : 19,
+       "practices" : "Manuring",
+       "country" : "BW",
+       "sowperiod" : "March-May",
+       "weedingperiod": "April-August",
+       "bloomperiod" : "June-August",
+       "harvestperiod" : "August-October",
+       "seedgerminationdays" : "14-20 days",
+       "soilpH" : "7.0pH",
+       "soiltype " : "Loam-Soil",
+       "germinationtoharvestperiod" : "50 days"
     }
 ]
