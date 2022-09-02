@@ -1,23 +1,70 @@
 [
     { 
-        "plant" : 1,
-       "name" : "vegetables",
-       "humidity" : 70,
-       "temperature" : 10,
-       "light" : 2
+        
+        "id" : 1,
+       "name" : "Tomato",
+       "averagehumidity" : 45,
+       "averagetemperature" : 22,
+       "practices" : "Manuring",
+       "country" : "LS",
+       "sowperiod" : "",
+       "weedingperiod": "",
+       "bloomperiod" : "",
+       "harvestperiod" : "",
+       "seedgerminationdays" : "",
+       "soilpH" : "",
+       "soiltype " : "",
+       "germinationtoharvestperiod" : ""
     },
+
     { 
-        "plant" : 2,
-       "name" : "flowering",
-       "humidity" : 60,
-       "temperature" : 10,
-       "light" : 2
+        "id" : 2,
+       "name" : "Maize",
+       "averagehumidity" : 40,
+       "averagetemperature" : 19,
+       "practices" : "Manuring",
+       "country" : "LS",
+       "sowperiod" : "October-November",
+       "weedingperiod": "November-December",
+       "bloomperiod" : "January-February",
+       "harvestperiod" : "May-June",
+       "seedgerminationdays" : "10-14 days",
+       "soilpH" : "7.0pH",
+       "soiltype " : "Loam-Soil",
+       "germinationtoharvestperiod" : "October-June"
     },
+
     { 
-        "plant" : 3,
-       "name" : "beans",
-       "humidity" : 10,
-       "temperature" : 10,
-       "light" : 2
+        "id" : 3,
+       "name" : "Cabbage",
+       "averagehumidity" : 20,
+       "averagetemperature" : 16,
+       "practices" : "Manuring",
+       "country" : "LS",
+       "sowperiod" : "",
+       "weedingperiod": "",
+       "bloomperiod" : "",
+       "harvestperiod" : "",
+       "seedgerminationdays" : "",
+       "soilpH" : "",
+       "soiltype " : "",
+       "germinationtoharvestperiod" : ""
+    },
+
+    { 
+        "id" : 4,
+       "name" : "Sugar Beans",
+       "averagehumidity" : 20,
+       "averagetemperature" : 15,
+       "practices" : "Manuring",
+       "country" : "LS",
+       "sowperiod" : "",
+       "weedingperiod": "",
+       "bloomperiod" : "",
+       "harvestperiod" : "",
+       "seedgerminationdays" : "",
+       "soilpH" : "",
+       "soiltype " : "",
+       "germinationtoharvestperiod" : ""
     }
 ]

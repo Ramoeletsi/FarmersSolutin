@@ -8,7 +8,7 @@ function App() {
   const [data, setData] = useState({})
   const [getlocation, setGetLocation] = useState('')
   const [showMoreDetails, setShowMoreDetails] = useState(false);
-  
+    
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${getlocation}&units=metric&appid=eacf37967a7e8aadc0c904494f4f488c`
 
   const dateBuilder = (d) => {
@@ -42,13 +42,23 @@ function App() {
         value={getlocation}
         onChange = {event => setGetLocation(event.target.value)}
         onKeyPress={searchLocation}
-        placeholder="Search...."
+        placeholder="Search By Location"
       />
     </div>
+    <div className='search-box'>
+      <input type="text" 
+        value={getlocation}
+        onChange = {event => setGetLocation(event.target.value)}
+        onKeyPress={searchLocation}
+        placeholder="Search By Plant"
+      />
+    </div>
+
+    {data.name !== undefined &&
       <div className="weather-container">
         <div className='top'>
           <div className="location">
-            <h1>{data.name}</h1>
+            <h1>{data.name}, {data.sys.country}</h1>
             <h2>{dateBuilder(new Date())}</h2>
           </div>
           <div className="temp">
@@ -59,7 +69,6 @@ function App() {
           </div>
         </div>
         
-        {data.name !== undefined &&
           <div className="bottom">
             <div className="feels">
               <p>Feels like</p>
@@ -81,45 +90,49 @@ function App() {
             {showMoreDetails  && 
             <div>
 
-          {data.main.humidity < 20 &&
-            <h2>
-              You have to water your plants.
+            <h5>
+              Suggested Plants You Can Grow In Your Area!!!
               { //check if the data exists then execute if its there
               Plants && Plants.map( plants => {
               return(
-                <div key={plants.plant}>
-                  {plants.humidity < 20 &&
-                 <p> {plants.name} </p>
-                  }
+                <div key={plants.id}> 
+                { data.main.humidity > 30 && plants.averagehumidity > data.main.humidity && data.main.temp > 10 && data.main.temp < plants.averagetemperature && plants.country === data.sys.country &&        
+                 <p> Plant Name: {plants.name} 
+                 <br></br>
+                 Germination Days: {plants.seedgerminationdays}
+                 <br></br>
+                 Soil pH: {plants.soilpH}
+                 <br></br>
+                 Soil Type: {plants['soiltype ']}
+                 <br></br>
+                 Sow Period: {plants.sowperiod}
+                 <br></br>
+                 Bloom Period: {plants.bloomperiod}
+                 <br></br>
+                 Harvest Period: {plants.harvestperiod}
+                 <br></br>
+                 Weeding Period: {plants.weedingperiod}
+                 <br></br>
+                 Agriculture Practice: {plants.practices}
+                 <br></br>
+                 Seed Germination Days: {plants.seedgerminationdays}
+                 <br></br>
+                 Germination-Harvest Days: {plants.germinationtoharvestperiod}
+                 </p>
+                }
                 </div>
               )})
               }
-            </h2>
-          }
-             
-          {data.main.humidity > 20 &&
-            <p>Humidity: Good
-            <br></br>
-            
-            { //check if the data exists then execute if its there
-              Plants && Plants.map( plants => {
-              return(
-                <div key={plants.plant}>
-                  {plants.humidity > 20 &&
-                 <p> {plants.name} </p>
-                  }
-                </div>
-              )})
-              }
-            </p>  
-            }
-            
+            </h5>
+          
+
           </div>
           }
         </div>          
-        }
+      
   
       </div>
+        }
     </div>
   );
 }
