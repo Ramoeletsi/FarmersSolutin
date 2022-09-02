@@ -1,7 +1,5 @@
 import React, {useState} from 'react'
- jsondata
 import Plants from './PlantsDetails.json';
- main
 import './App.css';
 import axios from 'axios';
 
@@ -27,39 +25,6 @@ function App() {
 
     return `${day} ${date} ${month} ${year}`
   }
-
-  const germinationDay = () => {
-    const current = new Date();
-  
-    current.setDate(current.getDate() + 10);
-    return(current.toDateString());
-    
-  }
-
-  const growthRateCalculation = () => {
-
-    const idealtemperature = 20;
-    const idealhumidity = 55;
-
-    const idealgrowth =  idealtemperature + idealhumidity;
-    const obtainedgrowth = data.main.temp + data.main.humidity;
-
-    const actualgrowth = idealgrowth - obtainedgrowth;
-
-    if (actualgrowth === idealgrowth){
-      return(germinationDay());
-    }
-    
-    if (actualgrowth < idealgrowth){
-      return( germinationDay());
-    }
-
-    else {
-      return(actualgrowth);
-    }
-    
-  }   
-  
   
   const searchLocation = (event) =>{
     if (event.key === 'Enter') {
@@ -88,6 +53,8 @@ function App() {
         placeholder="Search By Plant"
       />
     </div>
+
+    {data.name !== undefined &&
       <div className="weather-container">
         <div className='top'>
           <div className="location">
@@ -102,7 +69,6 @@ function App() {
           </div>
         </div>
         
-        {data.name !== undefined &&
           <div className="bottom">
             <div className="feels">
               <p>Feels like</p>
@@ -130,28 +96,39 @@ function App() {
               Plants && Plants.map( plants => {
               return(
                 <div key={plants.id}> 
-                { data.main.humidity > 30 && plants.averagehumidity > data.main.humidity && data.main.temp > 10 && data.main.temp < plants.averagetemperature &&        
+                { data.main.humidity > 30 && plants.averagehumidity > data.main.humidity && data.main.temp > 10 && data.main.temp < plants.averagetemperature && plants.country === data.sys.country &&        
                  <p> Plant Name: {plants.name} 
                  <br></br>
-                 Planting Day: {dateBuilder(new Date())}
+                 Germination Days: {plants.seedgerminationdays}
                  <br></br>
-                 Germination Day: {growthRateCalculation()}
+                 Soil pH: {plants.soilpH}
+                 <br></br>
+                 Soil Type: {plants['soiltype ']}
+                 <br></br>
+                 Sow Period: {plants.sowperiod}
+                 <br></br>
+                 Bloom Period: {plants.bloomperiod}
+                 <br></br>
+                 Harvest Period: {plants.harvestperiod}
+                 <br></br>
+                 Weeding Period: {plants.weedingperiod}
                  <br></br>
                  Agriculture Practice: {plants.practices}
+                 <br></br>
+                 Seed Germination Days: {plants.seedgerminationdays}
+                 <br></br>
+                 Germination-Harvest Days: {plants.germinationtoharvestperiod}
                  </p>
                 }
                 </div>
               )})
               }
             </h5>
-          
-
           </div>
           }
         </div>          
-        }
-  
       </div>
+        }
     </div>
   );
 }
