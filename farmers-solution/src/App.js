@@ -1,7 +1,5 @@
 import React, {useState} from 'react'
- jsondata
 import Plants from './PlantsDetails.json';
- main
 import './App.css';
 import axios from 'axios';
 
@@ -88,6 +86,7 @@ function App() {
         placeholder="Search By Plant"
       />
     </div>
+    {data.name !== undefined &&
       <div className="weather-container">
         <div className='top'>
           <div className="location">
@@ -102,7 +101,7 @@ function App() {
           </div>
         </div>
         
-        {data.name !== undefined &&
+       
           <div className="bottom">
             <div className="feels">
               <p>Feels like</p>
@@ -149,9 +148,9 @@ function App() {
           </div>
           }
         </div>          
-        }
   
       </div>
+        }
     </div>
   );
 }
