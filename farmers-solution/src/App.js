@@ -1,5 +1,7 @@
 import React, {useState} from 'react'
+ jsondata
 import Plants from './PlantsDetails.json';
+ main
 import './App.css';
 import axios from 'axios';
 
@@ -89,7 +91,7 @@ function App() {
       <div className="weather-container">
         <div className='top'>
           <div className="location">
-            <h1>{data.name}</h1>
+            <h1>{data.name}, {data.sys.country}</h1>
             <h2>{dateBuilder(new Date())}</h2>
           </div>
           <div className="temp">
