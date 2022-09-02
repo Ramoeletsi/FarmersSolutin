@@ -53,7 +53,6 @@ function App() {
         placeholder="Search By Plant"
       />
     </div>
-
     {data.name !== undefined &&
       <div className="weather-container">
         <div className='top'>
@@ -68,7 +67,6 @@ function App() {
           {data.weather ?  <h2>{data.weather[0].main}</h2> : null} 
           </div>
         </div>
-        
           <div className="bottom">
             <div className="feels">
               <p>Feels like</p>
