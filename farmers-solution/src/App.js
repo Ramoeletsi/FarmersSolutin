@@ -45,14 +45,6 @@ function App() {
         placeholder="Search By Location"
       />
     </div>
-    <div className='search-box'>
-      <input type="text" 
-        value={getlocation}
-        onChange = {event => setGetLocation(event.target.value)}
-        onKeyPress={searchLocation}
-        placeholder="Search By Plant"
-      />
-    </div>
 
     {data.name !== undefined &&
       <div className="weather-container">
@@ -91,12 +83,12 @@ function App() {
             <div>
 
             <h5>
-              Suggested Plants You Can Grow In Your Area!!!
+              Suggested Crops, Fruits And Vegetables You Can Grow In Your Area This Season!!!
               { //check if the data exists then execute if its there
               Plants && Plants.map( plants => {
               return(
                 <div key={plants.id}> 
-                { data.main.humidity > 30 && plants.averagehumidity > data.main.humidity && data.main.temp > 10 && data.main.temp < plants.averagetemperature && plants.country === data.sys.country &&        
+                { data.main.humidity > 20 && plants.averagehumidity > data.main.humidity && data.main.temp > 9 && data.main.temp > plants.averagetemperature && plants.country === data.sys.country &&        
                  <p> Plant Name: {plants.name} 
                  <br></br>
                  Germination Days: {plants.seedgerminationdays}
