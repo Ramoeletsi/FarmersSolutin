@@ -1,0 +1,58 @@
+[
+    { 
+        "id" : 1,
+       "name" : "Tomato",
+       "averagehumidity" : 45,
+       "practices" : "Manuring",
+       "averagetemperature" : 15,
+       "light" : 2
+    },
+
+    { 
+        "id" : 2,
+       "name" : "Maize",
+       "practices" : "Irrigation", 
+       "averagehumidity" : 40,
+       "averagetemperature" : 40,
+       "light" : 2,
+
+        "sowingmonths" : [
+            {
+                "early": "October",
+                "late" : "November"
+            }
+           ],
+
+        "weedcontrolmethods" : [
+            {
+                "one": "Intercropping",
+                "two" : "Crop Rotation"
+            }
+           ],
+           
+        "harvestingmonths" : [
+            {
+                "early": "May",
+                "late" : "July"
+            }
+           ]
+    },
+
+    { 
+        "id" : 3,
+       "name" : "Cabbage",
+       "averagehumidity" : 20,
+       "practices" : "Watering",
+       "averagetemperature" : 10,
+       "light" : 2
+    },
+
+    { 
+        "id" : 4,
+       "name" : "Sugar Beans",
+       "averagehumidity" : 20,
+       "practices" : "Watering",
+       "averagetemperature" : 15,
+       "light" : 2
+    }
+]
